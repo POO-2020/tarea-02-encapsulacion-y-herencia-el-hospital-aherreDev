@@ -1,7 +1,7 @@
 class Nombre {
-  nombre;
-  apellidoPaterno;
-  apellidoMaterno;
+  _nombre;
+  _apellidoPaterno;
+  _apellidoMaterno;
   /**
    *
    * @param {string} nombre
@@ -9,15 +9,15 @@ class Nombre {
    * @param {string} apellidoPaterno
    */
   constructor(nombre, apellidoMaterno, apellidoPaterno) {
-    this.nombre = nombre;
-    this.apellidoPaterno = apellidoPaterno;
-    this.apellidoMaterno = apellidoMaterno;
+    this._nombre = nombre;
+    this._apellidoPaterno = apellidoPaterno;
+    this._apellidoMaterno = apellidoMaterno;
   }
   getNombreCompleto = () =>
-    `${this.nombre} ${this.apellidoPaterno} ${this.apellidoMaterno}`;
+    `${this._nombre} ${this._apellidoPaterno} ${this._apellidoMaterno}`;
   getApellidoNombre = () =>
-    `${this.apellidoPaterno} ${this.apellidoMaterno} ${this.nombre}`;
+    `${this._apellidoPaterno} ${this._apellidoMaterno} ${this._nombre}`;
   getIniciales = () =>
-    `${this.nombre[0].toUpperCase()}${this.apellidoPaterno[0].toUpperCase()} ${this.apellidoMaterno[0].toUpperCase()}`;
+    `${this._nombre[0].toUpperCase()}${this._apellidoPaterno[0].toUpperCase()} ${this._apellidoMaterno[0].toUpperCase()}`;
 }
 export default Nombre;
