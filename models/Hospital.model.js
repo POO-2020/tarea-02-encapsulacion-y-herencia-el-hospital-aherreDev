@@ -4,10 +4,10 @@ import Doctor from "./Doctor.model.js";
 import Cita from "./Cita.model.js";
 
 class Hospital {
-  nombre;
-  direccion;
-  doctores = [];
-  citas = [];
+  _nombre;
+  _direccion;
+  _doctores = [];
+  _citas = [];
   /**
    *
    * @param {Nombre} nombre
@@ -15,23 +15,23 @@ class Hospital {
    * @param {Array.<Doctor>} doctores
    * @param {Array.<Cita>} citas
    */
-  constructor(nombre, direccion, doctores = [], citas = []) {
-    this.nombre = nombre;
-    this.direccion = direccion;
-    this.doctores = doctores;
-    this.citas = citas;
+  constructor({ nombre, direccion, doctores = [], citas = [] }) {
+    this._nombre = nombre;
+    this._direccion = direccion;
+    this._doctores = doctores;
+    this._citas = citas;
   }
   registrarDoctor = doctor => {
-    this.doctores.push(doctor);
+    this._doctores.push(doctor);
   };
   listarDoctores = () => {
-    this.doctores.forEach(doctor => console.log(doctor.getPerfil()));
+    this._doctores.forEach(doctor => console.log(doctor.getPerfil()));
   };
   registrarCita = cita => {
-    this.citas.push(cita);
+    this._citas.push(cita);
   };
   listarCitas = () => {
-    this.citas.forEach(cita => console.log(cita.getCita()));
+    this._citas.forEach(cita => console.log(cita.getCita()));
   };
 }
 export default Hospital;
