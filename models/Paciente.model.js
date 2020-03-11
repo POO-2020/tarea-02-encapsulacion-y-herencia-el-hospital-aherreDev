@@ -3,9 +3,9 @@ import Persona from "./Persona.model.js";
 
 class Paciente extends Persona {
   getPerfil = () => {
-    let { getNombreCompleto } = this.nombre;
-    let { getFecha } = this.fechaNacimiento;
-    return `${getNombreCompleto()}, ${getFecha()}, ${this.telefono}`;
+    let { getNombreCompleto } = this._nombre;
+    let { getFecha } = this._fechaNacimiento;
+    return `${getNombreCompleto()}, ${getFecha()}, ${this._telefono}`;
   };
   getNombre = () => this.nombre.getNombreCompleto();
 }

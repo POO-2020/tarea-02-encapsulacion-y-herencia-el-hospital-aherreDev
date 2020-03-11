@@ -19,7 +19,7 @@ class PacienteAsegurado extends Paciente {
     fechaVigencia,
     compania
   }) {
-    super(nombre, fechaNacimiento, telefono);
+    super({ nombre, fechaNacimiento, telefono });
     this._numeroPoliza = numeroPoliza;
     this._fechaVigencia = fechaVigencia;
     this._compania = compania;

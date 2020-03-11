@@ -3,18 +3,18 @@ import Fecha from "./Fecha.model.js";
 import Nombre from "./Nombre.model.js";
 
 class Persona {
-  nombre;
-  fechaNacimiento;
-  telefono;
+  _nombre;
+  _fechaNacimiento;
+  _telefono;
   /**
-   * @param {Nombre} nombre
-   * @param {Fecha} fechaNacimiento
-   * @param {string} telefono
+   * @param {Nombre} _nombre
+   * @param {Fecha} _fechaNacimiento
+   * @param {string} _telefono
    */
-  constructor(nombre, fechaNacimiento, telefono) {
-    this.nombre = nombre;
-    this.fechaNacimiento = fechaNacimiento;
-    this.telefono = telefono;
+  constructor({ nombre, fechaNacimiento, telefono }) {
+    this._nombre = nombre;
+    this._fechaNacimiento = fechaNacimiento;
+    this._telefono = telefono;
   }
 }
 
