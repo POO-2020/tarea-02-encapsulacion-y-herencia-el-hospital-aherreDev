@@ -5,10 +5,10 @@ import Doctor from "./Doctor.model.js";
 import Paciente from "./Paciente.model.js";
 
 class Cita {
-  fecha;
-  hora;
-  doctor;
-  paciente;
+  _fecha;
+  _hora;
+  _doctor;
+  _paciente;
   /**
    *
    * @param {Fecha} fecha
@@ -17,15 +17,15 @@ class Cita {
    * @param {Paciente} paciente
    */
   constructor(fecha, hora, doctor, paciente) {
-    this.fecha = fecha;
-    this.hora = hora;
-    this.doctor = doctor;
-    this.paciente = paciente;
+    this._fecha = fecha;
+    this._hora = hora;
+    this._doctor = doctor;
+    this._paciente = paciente;
   }
   getCita = () => {
-    let { getFecha } = this.fecha;
-    let { getFormato24Horas } = this.hora;
-    return `${getFecha()}, ${getFormato24Horas()}, ${this.doctor.getNombre()}, ${this.paciente.getNombre()}`;
+    let { getFecha } = this._fecha;
+    let { getFormato24Horas } = this._hora;
+    return `${getFecha()}, ${getFormato24Horas()}, ${this._doctor.getNombre()}, ${this._paciente.getNombre()}`;
   };
 }
 export default Cita;
