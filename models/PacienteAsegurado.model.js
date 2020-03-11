@@ -1,5 +1,5 @@
 import Paciente from "./Paciente.model.js";
-import Fecha from "./Fecha.model";
+import Fecha from "./Fecha.model.js";
 
 class PacienteAsegurado extends Paciente {
   _numeroPoliza;
@@ -25,12 +25,12 @@ class PacienteAsegurado extends Paciente {
     this._compania = compania;
   }
   getPerfil = () => {
-    const { getNombreCompleto } = this.fechaNacimiento;
-    const { getFecha } = this.fechaNacimiento;
-    const getFecha2 = this.fechaNacimiento.getFecha();
+    const { getNombreCompleto } = this._nombre;
+    const { getFecha } = this._fechaNacimiento;
+    const getFecha2 = this._fechaVigencia.getFecha();
     return `${getNombreCompleto()}, ${getFecha()}, ${this._telefono}, ${
       this._numeroPoliza
-    }, ${getFecha2()}, ${this._compania}`;
+    }, ${getFecha2}, ${this._compania}`;
   };
 }
 
